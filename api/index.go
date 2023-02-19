@@ -3,12 +3,16 @@ package handler
 import (
 	"fmt"
 	"net/http"
+	myuser "users/users"
 
+	"github.com/gin-gonic/gin"
 	. "github.com/tbxark/g4vercel"
 )
 
 func Handler(w http.ResponseWriter, r *http.Request) {
 	server := New()
+
+	myuser.ReadAll()
 
 	server.GET("/", func(context *Context) {
 		context.JSON(200, H{
