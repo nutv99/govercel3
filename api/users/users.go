@@ -20,7 +20,7 @@ func check2(c *gin.Context) {
 
 func ReadAll(c *gin.Context) {
 
-	c.JSON(http.StatusBadRequest, gin.H{
+	return c.JSON(http.StatusBadRequest, gin.H{
 		"status": "ok",
 		"mesage": "Read All user Data  Success",
 	})
