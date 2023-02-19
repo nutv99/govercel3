@@ -5,7 +5,6 @@ import (
 	"net/http"
 	myuser "users/users"
 
-	"github.com/gin-gonic/gin"
 	. "github.com/tbxark/g4vercel"
 )
 
@@ -18,6 +17,7 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 		context.JSON(200, H{
 			"message": "hello go from vercel from  folder API !!!!",
 		})
+		myuser.ReadAll()
 	})
 	server.GET("/hello", func(context *Context) {
 		name := context.Query("name")
